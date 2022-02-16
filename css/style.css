@@ -1,0 +1,15 @@
+section{
+    border-top: 3px solid rgba(128, 128, 128, 0.159);
+    border-right: 2px solid rgba(128, 128, 128, 0.159);
+    border-left: 3px solid rgba(128, 128, 128, 0.159);;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.159);
+    margin-top: 15px;
+}
+
+h3{
+    color:#398AB9;
+}
+
+#calculation-part{
+    background-color: #bfbcb735;
+}
