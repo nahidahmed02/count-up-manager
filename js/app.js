@@ -37,3 +37,34 @@ function changeHtml() {
 document.getElementById('btn-calc').addEventListener('click', function () {
     changeHtml()
 })
+
+
+
+// calculating saving amount and remaining balance
+
+// calculate saving
+function getSavings() {
+    const saving = (getValue('income') * getValue('save')) / 100;
+    return saving;
+};
+
+// calculate remaining balance
+function balanceRemaining() {
+    const remainingBalance = getBalance() - getSavings();
+    return remainingBalance;
+}
+
+// making change in html after saving
+function htmlAfterSaving() {
+    // change saving amount inner text
+    const saveAmount = document.getElementById('saving-amount');
+    saveAmount.innerText = getSavings();
+
+    // change remaining balance inner text
+    const remaining = document.getElementById('remaining-balance');
+    remaining.innerText = balanceRemaining();
+}
+
+document.getElementById('btn-save').addEventListener('click', function () {
+    htmlAfterSaving();
+})

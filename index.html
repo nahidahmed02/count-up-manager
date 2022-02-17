@@ -17,21 +17,17 @@
 
 <body>
     <section class="container">
-        <div class="row">
-            <div class="col-6 col-lg-12">
-                <h3 class="text-center fw-bold my-4 display-6">Count Up Manager</h3>
-            </div>
-        </div>
+        <h3 class="text-center fw-bold my-4 display-6">Count Up Manager</h3>
 
         <div>
             <div class="row">
                 <!-- picture added -->
-                <div class="col-6 col-lg-7 mt-1 mb-5 ms-4 px-0">
-                    <img class="img-fluid" src="image/pic 3.jpg" alt="">
+                <div class="col-10 col-lg-7 mt-1 mb-5 ms-4 px-0">
+                    <img class="img-fluid" src="image/pic 6.jpg" alt="">
                 </div>
 
                 <!-- calculation part -->
-                <div id="calculation-part" class="col-6 col-lg-4 mt-1 mb-5 mx-4 px-0">
+                <div id="calculation-part" class="col-10 col-lg-4 mt-1 mb-5 mx-4 px-0">
                     <!-- income -->
                     <div>
                         <h4 class="mt-5 mb-3">Income</h4>
@@ -85,7 +81,7 @@
                         </div>
                         <!-- save button -->
                         <div class="col-lg-3 col-12 d-flex justify-content-center">
-                            <button class="save-btn btn btn-primary px-4 ">Save</button>
+                            <button id="btn-save" class="save-btn btn btn-primary px-4 ">Save</button>
                         </div>
 
                     </div>
@@ -95,8 +91,8 @@
                     </p>
 
                     <!-- saving and remaining -->
-                    <h4 class="my-3">Saving Amount:</h4>
-                    <h4 class="my-3">Remaining Balance:</h4>
+                    <h4 class="my-3">Saving Amount: <span id="saving-amount"></span></h4>
+                    <h4 class="my-3">Remaining Balance: <span id="remaining-balance"></span></h4>
                 </div>
             </div>
         </div>
