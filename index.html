@@ -17,61 +17,77 @@
 
 <body>
     <section class="container">
-        <h3 class="text-center fw-bold my-4 display-6">Count Up Manager</h3>
+        <div class="row">
+            <div class="col-6 col-lg-12">
+                <h3 class="text-center fw-bold my-4 display-6">Count Up Manager</h3>
+            </div>
+        </div>
+
         <div>
             <div class="row">
                 <!-- picture added -->
-                <div class="col-sm-10 col-lg-7 mt-1 mb-5 ms-4">
+                <div class="col-6 col-lg-7 mt-1 mb-5 ms-4 px-0">
                     <img class="img-fluid" src="image/pic 3.jpg" alt="">
                 </div>
 
                 <!-- calculation part -->
-                <div id="calculation-part" class="col-sm-10 col-lg-4 mt-1 mb-5 mx-4">
+                <div id="calculation-part" class="col-6 col-lg-4 mt-1 mb-5 mx-4 px-0">
                     <!-- income -->
-                    <h4 class="mt-5 mb-3">Income</h4>
-                    <form class="d-flex justify-content-center" action="">
-                        <p class="pe-2">Income:</p>
-                        <input class="me-4" type="text">
-                    </form>
+                    <div>
+                        <h4 class="mt-5 mb-3">Income</h4>
+                        <form class="d-flex justify-content-center" action="">
+                            <p class="pe-2">Income:</p>
+                            <input id="income-input" class="me-4" type="text">
+                        </form>
+                    </div>
 
                     <!--expenses  -->
-                    <h4 class="mt-4 mb-3">Expenses</h4>
-                    <form class="d-flex justify-content-center mb-1" action="">
-                        <p class="pe-2">Food:</p>
-                        <input class="me-2" type="text">
-                    </form>
-                    <form class="d-flex justify-content-center mb-1" action="">
-                        <p class="pe-2">Rent:</p>
-                        <input class="me-1" type="text">
-                    </form>
-                    <form class="d-flex justify-content-center" action="">
-                        <p class="pe-2">Clothes:</p>
-                        <input class="me-4" type="text">
-                    </form>
+                    <div>
+                        <h4 class="mt-4 mb-3">Expenses</h4>
+                        <form class="d-flex justify-content-center mb-1" action="">
+                            <p class="pe-2">Food:</p>
+                            <input id="food-input" class="me-2" type="text">
+                        </form>
+                        <form class="d-flex justify-content-center mb-1" action="">
+                            <p class="pe-2">Rent:</p>
+                            <input id="rent-input" class="me-1" type="text">
+                        </form>
+                        <form class="d-flex justify-content-center" action="">
+                            <p class="pe-2">Clothes:</p>
+                            <input id="clothes-input" class="me-4" type="text">
+                        </form>
+                    </div>
 
                     <!-- calculate button -->
-                    <button id="btn-calc" class="btn btn-primary my-3 px-4 py-1">Calculate</button>
+                    <div>
+                        <button id="btn-calc" class="btn btn-primary my-3 px-4 py-1">Calculate</button>
+                    </div>
 
                     <!-- error msg for calculate btn -->
-                    <p class="error-msg text-center">Please write a number!</p>
-                    <p class="error-msg text-center">Please write a positive number!</p>
-                    <p class="error-msg my-2">Sorry! The amount of expenses cannot be more than the income.
+                    <p id="string-error" class="error-msg text-center">Please write a number!</p>
+                    <p id="number-error" class="error-msg text-center">Please write a positive number!</p>
+                    <p id="invalid-error" class="error-msg my-2">Sorry! The amount of expenses cannot be more than the
+                        income.
                     </p>
 
                     <!-- total expenses & balance -->
-                    <h4>Total Expenses:</h4>
-                    <h4 class="mt-3">Balance:</h4>
+                    <h4>Total Expenses: <span id="total-expenses"></span></h4>
+                    <h4 class="mt-3">Balance: <span id="balance"></span></h4>
 
                     <!-- percentage of saving -->
-                    <div class="mt-5">
-                        <form class="d-flex" action="">
-                            <p class="ms-4">Save:</p>
-                            <input class="mx-1" type="text">
-                            <p class="mx-1">%</p>
+                    <div class="row mt-5">
+                        <div class="col-lg-8 col-12">
+                            <form class="d-flex" action="">
+                                <p class="ms-5">Save:</p>
+                                <input id="save-input" class="ms-3" type="text">
+                                <p class="mx-2">%</p>
+                            </form>
+                        </div>
+                        <!-- save button -->
+                        <div class="col-lg-3 col-12 d-flex justify-content-center">
+                            <button class="save-btn btn btn-primary px-4 ">Save</button>
+                        </div>
 
-                            <!-- save button -->
-                            <button class="save-btn btn btn-primary ms-1 px-4">Save</button>
-                        </form>
                     </div>
 
                     <!-- error msg for save btn -->
