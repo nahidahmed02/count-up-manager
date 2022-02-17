@@ -1,15 +1,12 @@
 // calculating expenses and balance
 
 // get values
+
 function getValue(format) {
     const formatInput = document.getElementById(format + '-input');
     const formatValue = parseFloat(formatInput.value);
     return formatValue;
 }
-getValue('income');
-getValue('food');
-getValue('rent');
-getValue('clothes');
 
 // calculate expenses
 function getTotalExpenses() {
@@ -32,6 +29,12 @@ function changeHtml() {
     // change balance inner text
     const totalBalance = document.getElementById('balance')
     totalBalance.innerText = getBalance();
+    if (totalExpenses.innerText > getValue('income')) {
+        document.getElementById('invalid-error').style.display = 'block';
+    }
+    else {
+        document.getElementById('invalid-error').style.display = 'none';
+    }
 }
 
 document.getElementById('btn-calc').addEventListener('click', function () {
@@ -63,6 +66,12 @@ function htmlAfterSaving() {
     // change remaining balance inner text
     const remaining = document.getElementById('remaining-balance');
     remaining.innerText = balanceRemaining();
+    if (saveAmount.innerText > remaining.innerText) {
+        document.getElementById('invalid-saving').style.display = 'block'
+    }
+    else {
+        document.getElementById('invalid-saving').style.display = 'none'
+    }
 }
 
 document.getElementById('btn-save').addEventListener('click', function () {
