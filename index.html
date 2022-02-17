@@ -18,13 +18,70 @@
 <body>
     <section class="container">
         <h3 class="text-center fw-bold my-4 display-6">Count Up Manager</h3>
-        <div class="row">
-            <div class="col-12 col-lg-7 mt-1 mb-5 ms-4">
-                <img class="img-fluid" src="image/pic 2.jpg" alt="">
-            </div>
+        <div>
+            <div class="row">
+                <!-- picture added -->
+                <div class="col-sm-10 col-lg-7 mt-1 mb-5 ms-4">
+                    <img class="img-fluid" src="image/pic 3.jpg" alt="">
+                </div>
 
-            <div id="calculation-part" class="col-12 col-lg-4 mt-1 mb-5 mx-4">
-                <h4>Income</h4>
+                <!-- calculation part -->
+                <div id="calculation-part" class="col-sm-10 col-lg-4 mt-1 mb-5 mx-4">
+                    <!-- income -->
+                    <h4 class="mt-5 mb-3">Income</h4>
+                    <form class="d-flex justify-content-center" action="">
+                        <p class="pe-2">Income:</p>
+                        <input class="me-4" type="text">
+                    </form>
+
+                    <!--expenses  -->
+                    <h4 class="mt-4 mb-3">Expenses</h4>
+                    <form class="d-flex justify-content-center mb-1" action="">
+                        <p class="pe-2">Food:</p>
+                        <input class="me-2" type="text">
+                    </form>
+                    <form class="d-flex justify-content-center mb-1" action="">
+                        <p class="pe-2">Rent:</p>
+                        <input class="me-1" type="text">
+                    </form>
+                    <form class="d-flex justify-content-center" action="">
+                        <p class="pe-2">Clothes:</p>
+                        <input class="me-4" type="text">
+                    </form>
+
+                    <!-- calculate button -->
+                    <button id="btn-calc" class="btn btn-primary my-3 px-4 py-1">Calculate</button>
+
+                    <!-- error msg for calculate btn -->
+                    <p class="error-msg text-center">Please write a number!</p>
+                    <p class="error-msg text-center">Please write a positive number!</p>
+                    <p class="error-msg my-2">Sorry! The amount of expenses cannot be more than the income.
+                    </p>
+
+                    <!-- total expenses & balance -->
+                    <h4>Total Expenses:</h4>
+                    <h4 class="mt-3">Balance:</h4>
+
+                    <!-- percentage of saving -->
+                    <div class="mt-5">
+                        <form class="d-flex" action="">
+                            <p class="ms-4">Save:</p>
+                            <input class="mx-1" type="text">
+                            <p class="mx-1">%</p>
+
+                            <!-- save button -->
+                            <button class="save-btn btn btn-primary ms-1 px-4">Save</button>
+                        </form>
+                    </div>
+
+                    <!-- error msg for save btn -->
+                    <p class="error-msg my-2">Sorry! The amount of savings cannot exceed the balance.
+                    </p>
+
+                    <!-- saving and remaining -->
+                    <h4 class="my-3">Saving Amount:</h4>
+                    <h4 class="my-3">Remaining Balance:</h4>
+                </div>
             </div>
         </div>
     </section>

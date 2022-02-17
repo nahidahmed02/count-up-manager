@@ -10,6 +10,30 @@ h3{
     color:#398AB9;
 }
 
+input{
+    height: 30px;
+    background-color: rgba(220, 220, 220, 1)
+    ;
+    border: none;
+}
 #calculation-part{
     background-color: #bfbcb735;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#calculation-part h4{
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#btn-calc{
+    margin-left: 105px;
+}
+
+.error-msg{
+    color: red;
+    font-weight: bold;
+    /* display: none; */
 }
