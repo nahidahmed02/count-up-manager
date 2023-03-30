@@ -23,36 +23,40 @@ function getBalance() {
 // making change in html
 function changeHtml() {
 
-    // change total expenses inner text
+    // to change total expenses inner text
     const totalExpenses = document.getElementById('total-expenses');
+
+    // to change balance inner text
+    const totalBalance = document.getElementById('balance')
+
     if ((getValue('income') < 0) || (getValue('food') < 0) || (getValue('rent') < 0) || (getValue('clothes') < 0)) {
         document.getElementById('number-error').style.display = 'block';
         document.getElementById('invalid-error').style.display = 'none';
         document.getElementById('string-error').style.display = 'none';
         totalExpenses.innerText = ' ';
+        totalBalance.innerText = ' ';
     }
     else if (isNaN(getValue('income')) || isNaN(getValue('food')) || isNaN(getValue('rent')) || isNaN(getValue('clothes'))) {
         document.getElementById('string-error').style.display = 'block';
         document.getElementById('invalid-error').style.display = 'none';
         document.getElementById('number-error').style.display = 'none';
         totalExpenses.innerText = ' ';
+        totalBalance.innerText = ' ';
     }
     else if (getTotalExpenses() > getValue('income')) {
         document.getElementById('invalid-error').style.display = 'block';
         document.getElementById('string-error').style.display = 'none';
         document.getElementById('number-error').style.display = 'none';
         totalExpenses.innerText = ' ';
+        totalBalance.innerText = ' ';
     }
     else {
         document.getElementById('invalid-error').style.display = 'none';
         document.getElementById('string-error').style.display = 'none';
         document.getElementById('number-error').style.display = 'none';
         totalExpenses.innerText = getTotalExpenses();
+        totalBalance.innerText = getBalance();
     }
-
-    // change balance inner text
-    const totalBalance = document.getElementById('balance')
-    totalBalance.innerText = getBalance();
 }
 
 document.getElementById('btn-calc').addEventListener('click', function () {
