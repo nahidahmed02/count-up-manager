@@ -79,18 +79,20 @@
                         </div>
                         <!-- save button -->
                         <div class="col-lg-3 col-12 d-flex justify-content-center">
-                            <button id="btn-save" class="save-btn btn btn-primary px-4 ">Save</button>
+                            <button id="btn-save" class="save-btn btn btn-primary my-3 px-4 py-1">Save</button>
                         </div>
 
                     </div>
 
                     <!-- error msg for save btn -->
-                    <p id="invalid-saving" class="error-msg my-2">Sorry! The amount of savings cannot exceed the
+                    <p id="string-income" class="error-msg text-center">Please use numbers in income field!</p>
+                    <p id="negative-income" class="error-msg text-center">Income cannot be negative!</p>
+                    <p id="invalid-saving" class="error-msg text-center">Sorry! The amount of savings cannot exceed the
                         balance.
                     </p>
 
                     <!-- saving and remaining -->
-                    <h4 class="my-3">Saving Amount: <span id="saving-amount"></span></h4>
+                    <h4>Saving Amount: <span id="saving-amount"></span></h4>
                     <h4 class="my-3">Remaining Balance: <span id="remaining-balance"></span></h4>
                 </div>
             </div>

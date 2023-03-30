@@ -81,9 +81,27 @@ function balanceRemaining() {
 
 // making change in html after saving
 function htmlAfterSaving() {
+
     // change saving amount inner text
     const saveAmount = document.getElementById('saving-amount');
-    saveAmount.innerText = getSavings();
+
+    if (getValue('income') < 0) {
+        document.getElementById('negative-income').style.display = 'block';
+        document.getElementById('string-income').style.display = 'none';
+        saveAmount.innerText = ' ';
+    }
+    else if (isNaN(getValue('income'))) {
+        document.getElementById('string-income').style.display = 'block';
+        document.getElementById('negative-income').style.display = 'none';
+        saveAmount.innerText = ' ';
+    }
+    else {
+        document.getElementById('string-income').style.display = 'none';
+        document.getElementById('negative-income').style.display = 'none';
+        saveAmount.innerText = getSavings();
+    }
+
+
 
     // change remaining balance inner text
     const remaining = document.getElementById('remaining-balance');
