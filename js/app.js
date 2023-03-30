@@ -22,19 +22,37 @@ function getBalance() {
 
 // making change in html
 function changeHtml() {
+
     // change total expenses inner text
     const totalExpenses = document.getElementById('total-expenses');
-    totalExpenses.innerText = getTotalExpenses();
+    if ((getValue('income') < 0) || (getValue('food') < 0) || (getValue('rent') < 0) || (getValue('clothes') < 0)) {
+        document.getElementById('number-error').style.display = 'block';
+        document.getElementById('invalid-error').style.display = 'none';
+        document.getElementById('string-error').style.display = 'none';
+        totalExpenses.innerText = ' ';
+    }
+    else if (isNaN(getValue('income')) || isNaN(getValue('food')) || isNaN(getValue('rent')) || isNaN(getValue('clothes'))) {
+        document.getElementById('string-error').style.display = 'block';
+        document.getElementById('invalid-error').style.display = 'none';
+        document.getElementById('number-error').style.display = 'none';
+        totalExpenses.innerText = ' ';
+    }
+    else if (getTotalExpenses() > getValue('income')) {
+        document.getElementById('invalid-error').style.display = 'block';
+        document.getElementById('string-error').style.display = 'none';
+        document.getElementById('number-error').style.display = 'none';
+        totalExpenses.innerText = ' ';
+    }
+    else {
+        document.getElementById('invalid-error').style.display = 'none';
+        document.getElementById('string-error').style.display = 'none';
+        document.getElementById('number-error').style.display = 'none';
+        totalExpenses.innerText = getTotalExpenses();
+    }
 
     // change balance inner text
     const totalBalance = document.getElementById('balance')
     totalBalance.innerText = getBalance();
-    if (totalExpenses.innerText > getValue('income')) {
-        document.getElementById('invalid-error').style.display = 'block';
-    }
-    else {
-        document.getElementById('invalid-error').style.display = 'none';
-    }
 }
 
 document.getElementById('btn-calc').addEventListener('click', function () {
