@@ -60,19 +60,20 @@
                     </div>
 
                     <!-- error msg for calculate btn -->
-                    <p id="string-error" class="error-msg text-center">Please use numbers in input!</p>
-                    <p id="number-error" class="error-msg text-center">Please use positive numbers!</p>
-                    <p id="invalid-error" class="error-msg text-center">Sorry! Expenses cannot exceed income.</p>
+                    <p id="string-error" class="error-msg text-center">Please use numbers in input</p>
+                    <p id="number-error" class="error-msg text-center">Please use positive numbers</p>
+                    <p id="invalid-error" class="error-msg text-center">Sorry! Expenses cannot exceed income</p>
 
                     <!-- total expenses & balance -->
                     <h4>Total Expenses: <span id="total-expenses"></span></h4>
-                    <h4 class="mt-3">Balance: <span id="balance"></span></h4>
+                    <h4 class="mt-3">Balance <small>(After Expenses)</small>: <span id="balance"></span>
+                    </h4>
 
                     <!-- percentage of saving -->
                     <div class="row mt-5">
                         <div class="col-lg-8 col-12">
                             <form class="d-flex" action="">
-                                <p class="ms-5">Save:</p>
+                                <p class="ms-5">Save :<br><small>(On Income)</small></p>
                                 <input id="save-input" class="ms-3" type="text">
                                 <p class="mx-2">%</p>
                             </form>
@@ -85,15 +86,20 @@
                     </div>
 
                     <!-- error msg for save btn -->
-                    <p id="string-income" class="error-msg text-center">Please use numbers in income field!</p>
-                    <p id="negative-income" class="error-msg text-center">Income cannot be negative!</p>
-                    <p id="invalid-saving" class="error-msg text-center">Sorry! The amount of savings cannot exceed the
-                        balance.
+                    <p id="string-income" class="error-msg text-center">Please use numbers in the income field</p>
+                    <p id="negative-income" class="error-msg text-center">Income cannot be negative</p>
+                    <p id="string-expenses" class="error-msg text-center">Please use numbers in the expenses field</p>
+                    <p id="negative-expenses" class="error-msg text-center">Cannot use negative values in the expenses
+                        section</p>
+                    <p id="invalid-saving" class="error-msg text-center">The amount of savings cannot exceed the balance
+                    </p>
+                    <p id="invalid-saving-input" class="error-msg text-center">Please fill-up the save input correctly
                     </p>
 
                     <!-- saving and remaining -->
                     <h4>Saving Amount: <span id="saving-amount"></span></h4>
-                    <h4 class="my-3">Remaining Balance: <span id="remaining-balance"></span></h4>
+                    <h4 class="my-3">Remaining Balance <small>(After Saving)</small>: <span
+                            id="remaining-balance"></span></h4>
                 </div>
             </div>
         </div>

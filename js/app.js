@@ -82,35 +82,81 @@ function balanceRemaining() {
 // making change in html after saving
 function htmlAfterSaving() {
 
-    // change saving amount inner text
+    // to change saving amount inner text
     const saveAmount = document.getElementById('saving-amount');
+
+    // to change remaining balance inner text
+    const remaining = document.getElementById('remaining-balance');
 
     if (getValue('income') < 0) {
         document.getElementById('negative-income').style.display = 'block';
         document.getElementById('string-income').style.display = 'none';
+        document.getElementById('invalid-saving').style.display = 'none';
+        document.getElementById('string-expenses').style.display = 'none';
+        document.getElementById('negative-expenses').style.display = 'none';
+        document.getElementById('invalid-saving-input').style.display = 'none';
         saveAmount.innerText = ' ';
+        remaining.innerText = ' ';
     }
     else if (isNaN(getValue('income'))) {
         document.getElementById('string-income').style.display = 'block';
         document.getElementById('negative-income').style.display = 'none';
+        document.getElementById('invalid-saving').style.display = 'none';
+        document.getElementById('string-expenses').style.display = 'none';
+        document.getElementById('negative-expenses').style.display = 'none';
+        document.getElementById('invalid-saving-input').style.display = 'none';
         saveAmount.innerText = ' ';
+        remaining.innerText = ' ';
+    }
+    else if ((getValue('food') < 0) || (getValue('rent') < 0) || (getValue('clothes') < 0)) {
+        document.getElementById('negative-expenses').style.display = 'block';
+        document.getElementById('string-expenses').style.display = 'none';
+        document.getElementById('string-income').style.display = 'none';
+        document.getElementById('negative-income').style.display = 'none';
+        document.getElementById('invalid-saving').style.display = 'none';
+        document.getElementById('invalid-saving-input').style.display = 'none';
+        saveAmount.innerText = ' ';
+        remaining.innerText = ' ';
+    }
+    else if (isNaN(getValue('food')) || isNaN(getValue('rent')) || isNaN(getValue('clothes'))) {
+        document.getElementById('string-expenses').style.display = 'block';
+        document.getElementById('negative-expenses').style.display = 'none';
+        document.getElementById('string-income').style.display = 'none';
+        document.getElementById('negative-income').style.display = 'none';
+        document.getElementById('invalid-saving').style.display = 'none';
+        document.getElementById('invalid-saving-input').style.display = 'none';
+        saveAmount.innerText = ' ';
+        remaining.innerText = ' ';
+    }
+    else if (isNaN(getSavings()) || getSavings() < 0) {
+        document.getElementById('invalid-saving-input').style.display = 'block';
+        document.getElementById('string-expenses').style.display = 'none';
+        document.getElementById('negative-expenses').style.display = 'none';
+        document.getElementById('string-income').style.display = 'none';
+        document.getElementById('negative-income').style.display = 'none';
+        document.getElementById('invalid-saving').style.display = 'none';
+        saveAmount.innerText = ' ';
+        remaining.innerText = ' ';
+    }
+    else if (getSavings() > getBalance()) {
+        document.getElementById('invalid-saving').style.display = 'block';
+        document.getElementById('string-income').style.display = 'none';
+        document.getElementById('negative-income').style.display = 'none';
+        document.getElementById('string-expenses').style.display = 'none';
+        document.getElementById('negative-expenses').style.display = 'none';
+        document.getElementById('invalid-saving-input').style.display = 'none';
+        saveAmount.innerText = ' ';
+        remaining.innerText = ' ';
     }
     else {
         document.getElementById('string-income').style.display = 'none';
         document.getElementById('negative-income').style.display = 'none';
+        document.getElementById('invalid-saving').style.display = 'none';
+        document.getElementById('string-expenses').style.display = 'none';
+        document.getElementById('negative-expenses').style.display = 'none';
+        document.getElementById('invalid-saving-input').style.display = 'none';
         saveAmount.innerText = getSavings();
-    }
-
-
-
-    // change remaining balance inner text
-    const remaining = document.getElementById('remaining-balance');
-    remaining.innerText = balanceRemaining();
-    if (saveAmount.innerText > remaining.innerText) {
-        document.getElementById('invalid-saving').style.display = 'block'
-    }
-    else {
-        document.getElementById('invalid-saving').style.display = 'none'
+        remaining.innerText = balanceRemaining();
     }
 }
 
