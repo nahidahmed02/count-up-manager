@@ -1,53 +1,45 @@
-body{
+body {
     margin: 0;
 }
 
 /* for the only section tag */
-section{
-    border-top: 3px solid rgba(128, 128, 128, 0.159);
-    border-right: 2px solid rgba(128, 128, 128, 0.159);
-    border-left: 3px solid rgba(128, 128, 128, 0.159);;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.159);
-    margin-top: 15px;
+section {
+    border: 3px solid rgba(128, 128, 128, 0.159);
+    margin: 15px;
 }
 
 /* for every h3 tag */
-h3{
-    color:#398AB9;
+h3 {
+    color: #398AB9;
 }
 
 /* for every input tag */
-input{
+input {
     height: 30px;
-    background-color: rgba(220, 220, 220, 1)
-    ;
-    border: none;
+    background-color: rgba(220, 220, 220, 1);
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 /* css for calculation part */
-#calculation-part{
+#calculation-part {
     background-color: #bfbcb735;
     font-size: 14px;
     font-weight: 500;
 }
 
-#calculation-part h4{
+#calculation-part h4 {
     font-size: 15px;
     font-weight: 700;
     text-align: center;
 }
 
-/* calculate button */
-#btn-calc{
-    margin-left: 105px;
-}
-
-#save-input{
-    width: 50%;
+#save-input {
+    width: 75%;
 }
 
 /* for every error message */
-.error-msg{
+.error-msg {
     color: red;
     font-weight: bold;
     display: none;
